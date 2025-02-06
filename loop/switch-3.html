@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스위치문 예제 3</title>
+  </head>
+  <body>
+    
+    <script>
+        // site 변수 및 site에 대한 변수값 지정
+      let site = prompt("네이버,구글,유튜브 / 즐겨 사용하는 포털 검색 사이트는?");
+      // url 변수 설정(switch 안에서 url 변수에 대한 값을 지정할 예정)
+      let url;
+      // switch로 url 값을 지정할 케이스 분류
+      switch (site) {
+        // 다음 case에서 url값을 구글로 지정
+        case "구글":
+          url = "www.google.com";
+          break;
+          // 다음 case에서 url을 네이버로 지정
+        case "네이버":
+          url = "www.naver.com";
+          break;
+          // 다음 case에서 url을 유튜브로 지정
+        case "유튜브":
+          url = "www.youtube.com";
+          break;
+          // 초깃값을 alert으로 설정 -> 잘못된 값을 입력할 시 alert의 내용("보기에 없는 사이트 입니다.") 출력
+          default:
+            alert("보기에 없는 사이트 입니다.")
+      }
+      // 위에 switch함수로는 해당하는 사이트가 오픈 되지 않음.
+      // if문으로 사이트 오픈 설정 
+      
+      if(url){
+        // console.log(url);
+        window.open(`http://${url}` , "_blank")
+         // if문이라고 무조건 else를 붙히는 건 아님.
+      // else는 조건 if에 설정되지 않는 값을 출력함.
+      // 위 switch문에서 default값을 설정하였기 때문에 굳이 else를 사용할 필요x
+      }
+    </script>
+  </body>
+</html>
